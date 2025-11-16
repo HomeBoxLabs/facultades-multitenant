@@ -1,34 +1,15 @@
 <script setup>
-import { onMounted } from 'vue'
-import { useTenantStore } from './store/tenant'
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
+import { onMounted } from "vue";
+import { useTenantStore } from "./store/tenant";
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 
-const tenantStore = useTenantStore()
+const tenantStore = useTenantStore();
 
-// Cargar datos del tenant al montar la aplicación
-onMounted(async () => {
-  try {
-    // Obtener tenant_id desde la URL (ej: ?tenant_id=2)
-    const urlParams = new URLSearchParams(window.location.search)
-    const tenantId = urlParams.get('tenant_id')
-
-    // Obtener subdomain desde la URL (ej: ?facultad=economia)
-    const subdomain = urlParams.get('facultad')
-
-    // Cargar tenant según parámetro de URL
-    if (tenantId) {
-      await tenantStore.fetchTenant(tenantId)
-    } else if (subdomain) {
-      await tenantStore.fetchTenantBySubdomain(subdomain)
-    } else {
-      // Por defecto carga el primero
-      await tenantStore.fetchTenant()
-    }
-  } catch (error) {
-    console.error('Error loading tenant data:', error)
-  }
-})
+// Aplicar colores del tema al montar la aplicación
+onMounted(() => {
+  tenantStore.applyThemeColors();
+});
 </script>
 
 <template>
