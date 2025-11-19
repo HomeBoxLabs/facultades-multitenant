@@ -1,12 +1,25 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import router from './router'
 import App from './App.vue'
-import './style.css'
+import router from './router'
+
+// Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+// Librerías de animación y efectos
+import 'glightbox/dist/css/glightbox.min.css'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
+// Estilos personalizados
+import './assets/css/main.css'
+import './assets/css/menu.css'
+import './assets/css/fixes.css'
+
+// Bootstrap JS
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 const app = createApp(App)
-
-app.use(createPinia())
 app.use(router)
-
 app.mount('#app')

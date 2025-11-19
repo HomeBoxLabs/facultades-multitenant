@@ -1,0 +1,115 @@
+/*--------------------------------------------------------------
+# Animaciones CSS nativas - Reemplazo de AOS
+# Sin dependencias externas, sin warnings en consola
+--------------------------------------------------------------*/
+
+/* Animación fade-up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación fade-down */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación fade-left */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animación fade-right */
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animación zoom-in */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Aplicar animaciones a elementos con data-aos */
+[data-aos="fade-up"] {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+[data-aos="fade-down"] {
+  animation: fadeDown 0.8s ease-out forwards;
+}
+
+[data-aos="fade-left"] {
+  animation: fadeLeft 0.8s ease-out forwards;
+}
+
+[data-aos="fade-right"] {
+  animation: fadeRight 0.8s ease-out forwards;
+}
+
+[data-aos="zoom-in"] {
+  animation: zoomIn 0.8s ease-out forwards;
+}
+
+/* Delays de animación */
+[data-aos][data-aos-delay="100"] {
+  animation-delay: 0.1s;
+}
+
+[data-aos][data-aos-delay="200"] {
+  animation-delay: 0.2s;
+}
+
+[data-aos][data-aos-delay="300"] {
+  animation-delay: 0.3s;
+}
+
+[data-aos][data-aos-delay="400"] {
+  animation-delay: 0.4s;
+}
+
+[data-aos][data-aos-delay="500"] {
+  animation-delay: 0.5s;
+}
+
+[data-aos][data-aos-delay="600"] {
+  animation-delay: 0.6s;
+}
+
+/* Estado inicial de elementos animados */
+[data-aos] {
+  opacity: 0;
+}
