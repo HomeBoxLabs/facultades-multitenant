@@ -1,0 +1,9 @@
+# Editor directories and files
+.vscode/
+.claude/
+.idea/
+.DS_Store
+
+# OS files
+Thumbs.db
+*.sw?
