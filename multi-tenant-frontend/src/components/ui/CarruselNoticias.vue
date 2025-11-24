@@ -7,10 +7,12 @@
           :alt="noticias[currentIndex].titulo"
           class="noticia-imagen"
           loading="lazy"
-        >
+        />
         <div class="noticia-overlay">
           <h3 class="noticia-titulo">{{ noticias[currentIndex].titulo }}</h3>
-          <p class="noticia-descripcion">{{ noticias[currentIndex].descripcion }}</p>
+          <p class="noticia-descripcion">
+            {{ noticias[currentIndex].descripcion }}
+          </p>
         </div>
       </div>
     </transition>
@@ -20,7 +22,7 @@
       <button
         v-for="(noticia, index) in noticias"
         :key="index"
-        :class="['indicador', { 'active': index === currentIndex }]"
+        :class="['indicador', { active: index === currentIndex }]"
         @click="goToSlide(index)"
         :aria-label="`Ir a noticia ${index + 1}`"
       ></button>
@@ -29,54 +31,57 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from "vue";
 
 const noticias = ref([
   {
-    imagen: '/assets/img/notis/noti1.jpg',
-    titulo: 'Noticia Destacada 1',
-    descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    imagen: "/img/notis/noti1.jpg",
+    titulo: "Noticia Destacada 1",
+    descripcion:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    imagen: '/assets/img/notis/noti2.jpg',
-    titulo: 'Noticia Destacada 2',
-    descripcion: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    imagen: "/img/notis/noti2.jpg",
+    titulo: "Noticia Destacada 2",
+    descripcion:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    imagen: '/assets/img/notis/noti3.jpg',
-    titulo: 'Noticia Destacada 3',
-    descripcion: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-  }
-])
+    imagen: "/img/notis/noti3.jpg",
+    titulo: "Noticia Destacada 3",
+    descripcion:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+]);
 
-const currentIndex = ref(0)
-let intervalId = null
+const currentIndex = ref(0);
+let intervalId = null;
 
 const nextSlide = () => {
-  currentIndex.value = (currentIndex.value + 1) % noticias.value.length
-}
+  currentIndex.value = (currentIndex.value + 1) % noticias.value.length;
+};
 
 const goToSlide = (index) => {
-  currentIndex.value = index
-  resetInterval()
-}
+  currentIndex.value = index;
+  resetInterval();
+};
 
 const resetInterval = () => {
   if (intervalId) {
-    clearInterval(intervalId)
+    clearInterval(intervalId);
   }
-  intervalId = setInterval(nextSlide, 5000)
-}
+  intervalId = setInterval(nextSlide, 5000);
+};
 
 onMounted(() => {
-  intervalId = setInterval(nextSlide, 5000)
-})
+  intervalId = setInterval(nextSlide, 5000);
+});
 
 onUnmounted(() => {
   if (intervalId) {
-    clearInterval(intervalId)
+    clearInterval(intervalId);
   }
-})
+});
 </script>
 
 <style scoped>
