@@ -1,8 +1,9 @@
-# 🚀 INSTRUCCIONES DE INSTALACIÓN - Frontend OTI
+# INSTRUCCIONES DE INSTALACIÓN - Frontend OTI
 
 ## ✅ Proyecto Completado
 
 Se ha migrado exitosamente el proyecto de **JavaScript Vanilla** a **Vue.js 3 + Vite** manteniendo:
+
 - ✅ Todos los estilos (Bootstrap + CSS custom)
 - ✅ Todas las funcionalidades
 - ✅ Diseño responsive
@@ -21,6 +22,7 @@ npm install
 ```
 
 Esto instalará:
+
 - Vue 3
 - Vite
 - Bootstrap 5
@@ -102,6 +104,7 @@ frontend-oti/
 ## 🎨 Componentes Principales
 
 ### 1. **HeroSection.vue** (La más importante)
+
 - Título principal de OTI
 - Badge con logo UNAP
 - Botones de video (Intro OTI, Tutorial Firma Digital)
@@ -109,6 +112,7 @@ frontend-oti/
 - 3 Feature boxes (Servicios Estudiantes, Docentes, Soporte)
 
 ### 2. **AppHeader.vue**
+
 - Logo OTI
 - Navegación responsive
 - Mega-menu dropdown de 2 columnas (Unidades)
@@ -116,16 +120,19 @@ frontend-oti/
 - Botón "Noticias OTI"
 
 ### 3. **NoticiasSection.vue**
+
 - Galería de imágenes de actividades
 - Texto descriptivo
 - Botón "Ver más"
 
 ### 4. **ServiciosSection.vue**
+
 - Campus Virtual
 - Correo institucional
 - Descargar FUT
 
 ### 5. **TeamSection.vue**
+
 - Cards del Jefe de OTI y equipo
 - Fotos y cargos
 - Redes sociales (overlay en hover)
@@ -134,44 +141,50 @@ frontend-oti/
 
 ## 🔧 Tecnologías Usadas
 
-| Tecnología | Versión | Uso |
-|-----------|---------|-----|
-| Vue.js | 3.x | Framework principal |
-| Vite | 6.x | Build tool |
-| Bootstrap | 5.x | Estilos y grid |
-| Bootstrap Icons | 1.x | Iconografía |
-| AOS | 2.x | Animaciones scroll |
-| GLightbox | 3.x | Galería de imágenes |
-| Swiper | 11.x | Carruseles |
-| Font Awesome | 4.7 | Iconos adicionales |
+| Tecnología      | Versión | Uso                 |
+| --------------- | ------- | ------------------- |
+| Vue.js          | 3.x     | Framework principal |
+| Vite            | 6.x     | Build tool          |
+| Bootstrap       | 5.x     | Estilos y grid      |
+| Bootstrap Icons | 1.x     | Iconografía         |
+| AOS             | 2.x     | Animaciones scroll  |
+| GLightbox       | 3.x     | Galería de imágenes |
+| Swiper          | 11.x    | Carruseles          |
+| Font Awesome    | 4.7     | Iconos adicionales  |
 
 ---
 
 ## 🌐 Funcionalidades Implementadas
 
 ✅ **Navegación Responsive**
+
 - Menú hamburguesa en móvil
 - Mega-menu dropdown en desktop
 
 ✅ **Video Modals**
+
 - Modal para videos de YouTube
 - 4 videos disponibles (OTI, FirmaUNA, Linux, Mac)
 - Cierre con overlay o botón X
 
 ✅ **FirmaUNA Modal**
+
 - Se abre automáticamente al cargar la página
 - Descarga para Windows, Linux, MacOS
 - Links a tutoriales en video
 
 ✅ **Animaciones AOS**
+
 - Efectos fade-up, zoom-in
 - Se activan al hacer scroll
 
 ✅ **Scroll to Top**
+
 - Botón que aparece después de 100px de scroll
 - Animación smooth
 
 ✅ **Responsive Images**
+
 - Imágenes optimizadas
 - Lazy loading
 
@@ -180,15 +193,19 @@ frontend-oti/
 ## 🐛 Resolución de Problemas
 
 ### Error: "Cannot find module '@/components/...'"
+
 **Solución:** Asegúrate de que el alias `@` está configurado en `vite.config.js`
 
 ### Las imágenes no se muestran
+
 **Solución:** Verifica que las imágenes estén en `public/assets/img/` y `public/assets/res/`
 
 ### Los estilos no se aplican
+
 **Solución:** Verifica que `main.css` y `menu.css` estén en `src/assets/css/`
 
 ### Error de Bootstrap
+
 **Solución:** Ejecuta `npm install bootstrap bootstrap-icons`
 
 ---
@@ -196,14 +213,17 @@ frontend-oti/
 ## 📝 Modificar el Proyecto
 
 ### Cambiar colores
+
 Edita las variables CSS en `src/assets/css/main.css` (líneas 14-40)
 
 ### Agregar nueva sección
+
 1. Crea componente en `src/components/sections/`
 2. Importa en `App.vue`
 3. Agrega en la etiqueta `<main>`
 
 ### Modificar el menú
+
 Edita `src/components/layout/AppHeader.vue`
 
 ---
@@ -211,6 +231,7 @@ Edita `src/components/layout/AppHeader.vue`
 ## 🚀 Despliegue en Producción
 
 ### 1. Build
+
 ```bash
 npm run build
 ```
@@ -218,6 +239,7 @@ npm run build
 ### 2. Subir carpeta `dist/` al servidor
 
 ### 3. Configurar servidor web (ejemplo Nginx)
+
 ```nginx
 server {
     listen 80;
