@@ -36,18 +36,6 @@
       </div>
     </section>
 
-    <!-- Cifras Section -->
-    <section class="cifras-section section" style="background-color: #e8eef3">
-      <div class="container">
-        <div class="section-title-custom text-center" data-aos="fade-up">
-          <h2>Cifras</h2>
-          <p>Datos estadísticos de nuestra comunidad académica</p>
-        </div>
-
-        <StatsBoxes :stats="statsData" />
-      </div>
-    </section>
-
     <!-- Organigrama Section -->
     <OrganigramaSection
       :title="organigramaData.title"
@@ -61,31 +49,7 @@
 </template>
 
 <script setup>
-import StatsBoxes from "@/components/ui/StatsBoxes.vue";
 import OrganigramaSection from "@/components/sections/OrganigramaSection.vue";
-
-const statsData = [
-  {
-    icon: "bi bi-person-workspace",
-    number: "1,500",
-    label: "Estudiantes",
-  },
-  {
-    icon: "bi bi-people-fill",
-    number: "47",
-    label: "Docentes",
-  },
-  {
-    icon: "bi bi-easel2",
-    number: "40",
-    label: "Docentes Investigadores",
-  },
-  {
-    icon: "bi bi-journal-text",
-    number: "450",
-    label: "Tesis Sustentadas",
-  },
-];
 
 const organigramaData = {
   title: "Organigrama",
@@ -122,30 +86,6 @@ const organigramaData = {
   color: var(--default-color);
 }
 
-/* Cifras Section */
-.cifras-section {
-  padding: 80px 0;
-}
-
-.section-title-custom {
-  margin-bottom: 3rem;
-  padding-bottom: 0;
-}
-
-.section-title-custom h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--heading-color);
-  font-family: var(--heading-font);
-}
-
-.section-title-custom p {
-  font-size: 1rem;
-  color: var(--default-color);
-  margin: 0;
-}
-
 /* Responsive */
 @media (max-width: 991.98px) {
   .sobre-nosotros-hero {
@@ -155,10 +95,6 @@ const organigramaData = {
 
   .hero-title {
     font-size: 2rem;
-  }
-
-  .cifras-section {
-    padding: 60px 0;
   }
 }
 

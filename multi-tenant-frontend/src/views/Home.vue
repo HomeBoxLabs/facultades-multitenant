@@ -1,6 +1,19 @@
 <template>
   <main class="main">
     <HeroSection />
+
+    <!-- Cifras Section -->
+    <section class="cifras-section section" style="background-color: #ffffff">
+      <div class="container">
+        <div class="section-title-custom text-center" data-aos="fade-up">
+          <h2>Cifras</h2>
+          <p>Datos estadísticos de nuestra comunidad académica</p>
+        </div>
+
+        <StatsBoxes :stats="statsData" />
+      </div>
+    </section>
+
     <MissionVisionSection
       title="Nuestros principios y objetivos como institución"
       :items="missionVisionData"
@@ -26,6 +39,30 @@ import MissionVisionSection from "@/components/sections/MissionVisionSection.vue
 import PropositsSection from "@/components/sections/PropositsSection.vue";
 import PlanEstudiosSection from "@/components/sections/PlanEstudiosSection.vue";
 import LineasInvestigacionSection from "@/components/sections/LineasInvestigacionSection.vue";
+import StatsBoxes from "@/components/ui/StatsBoxes.vue";
+
+const statsData = [
+  {
+    icon: "bi bi-person-workspace",
+    number: "1,500",
+    label: "Estudiantes",
+  },
+  {
+    icon: "bi bi-people-fill",
+    number: "47",
+    label: "Docentes",
+  },
+  {
+    icon: "bi bi-easel2",
+    number: "40",
+    label: "Docentes Investigadores",
+  },
+  {
+    icon: "bi bi-journal-text",
+    number: "450",
+    label: "Tesis Sustentadas",
+  },
+];
 
 const missionVisionData = [
   {
@@ -88,3 +125,36 @@ const lineasInvestigacionData = [
   },
 ];
 </script>
+
+<style scoped>
+/* Cifras Section */
+.cifras-section {
+  padding: 80px 0;
+}
+
+.section-title-custom {
+  margin-bottom: 3rem;
+  padding-bottom: 0;
+}
+
+.section-title-custom h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+.section-title-custom p {
+  font-size: 1rem;
+  color: var(--default-color);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .cifras-section {
+    padding: 60px 0;
+  }
+}
+</style>
