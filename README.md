@@ -8,7 +8,7 @@ Sistema completo para gestionar múltiples facultades con **Vue.js 3** (frontend
 
 ### 1. Backend (Laravel)
 ```bash
-cd multi-tenant-backend
+cd backend-mtenant
 composer install
 cp .env.example .env
 php artisan key:generate
@@ -23,7 +23,7 @@ php artisan serve
 
 ### 2. Frontend (Vue.js)
 ```bash
-cd multi-tenant-frontend
+cd frontend-mtenant
 npm install
 npm run dev
 ```
@@ -93,7 +93,7 @@ Frotend-Tenant/
 ├── BASE_DE_DATOS.md         # 💾 Documentación BD
 ├── README.md                # 📖 Este archivo
 │
-├── multi-tenant-frontend/   # Vue.js 3 + Vite
+├── frontend-mtenant/   # Vue.js 3 + Vite
 │   ├── src/
 │   │   ├── components/     # Header, Footer, Card
 │   │   ├── views/          # Home, Sobre, Programas...
@@ -103,7 +103,7 @@ Frotend-Tenant/
 │   ├── .env                # Config frontend
 │   └── package.json
 │
-└── multi-tenant-backend/    # Laravel 11
+└── backend-mtenant/    # Laravel 11
     ├── app/
     │   ├── Models/         # Tenant, Programa, etc.
     │   └── Http/Controllers/
@@ -196,17 +196,17 @@ http://localhost:5173?facultad=economia
 ### Frontend muestra "Cargando..."
 1. Verifica que el backend esté corriendo
 2. Abre la consola del navegador (F12)
-3. Verifica la URL de la API en `multi-tenant-frontend/.env`
+3. Verifica la URL de la API en `frontend-mtenant/.env`
 
 ### Error de CORS
 ```bash
-cd multi-tenant-backend
+cd backend-mtenant
 php artisan config:clear
 ```
 
 ### Imágenes no se ven
 ```bash
-cd multi-tenant-backend
+cd backend-mtenant
 php artisan storage:link
 ```
 

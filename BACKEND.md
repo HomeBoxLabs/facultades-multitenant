@@ -9,7 +9,7 @@ API RESTful desarrollada con **Laravel 11 + MySQL** para gestionar múltiples fa
 ## ⚡ Inicio Rápido
 
 ```bash
-cd multi-tenant-backend
+cd backend-mtenant
 composer install
 cp .env.example .env
 php artisan key:generate
@@ -26,7 +26,7 @@ API disponible en: http://localhost:8000
 ## 📁 Estructura
 
 ```
-multi-tenant-backend/
+backend-mtenant/
 ├── app/
 │   ├── Http/Controllers/
 │   │   └── TenantController.php   # Controlador principal

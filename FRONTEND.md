@@ -9,7 +9,7 @@ Frontend moderno desarrollado con **Vue.js 3 + Vite** para sistema multi-tenant 
 ## ⚡ Inicio Rápido
 
 ```bash
-cd multi-tenant-frontend
+cd frontend-mtenant
 npm install
 npm run dev
 ```
@@ -42,7 +42,7 @@ Los colores cambian automáticamente según la facultad:
 ## 📁 Estructura
 
 ```
-multi-tenant-frontend/
+frontend-mtenant/
 ├── src/
 │   ├── components/          # Componentes reutilizables
 │   │   ├── Header.vue      # Header con menú
