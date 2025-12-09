@@ -18,13 +18,12 @@
       <!-- Desktop Navigation -->
       <nav class="desktop-nav d-none d-lg-flex">
         <ul class="nav-list">
-          <li><router-link to="/">Inicio</router-link></li>
-          <li>
-            <router-link to="/sobre-nosotros">Sobre Nosotros</router-link>
+          <li
+            v-for="item in menu.length > 0 ? menu : defaultMenu"
+            :key="item.path"
+          >
+            <router-link :to="item.path">{{ item.label }}</router-link>
           </li>
-          <li><router-link to="/programas">Programas</router-link></li>
-          <li><router-link to="/autoridades">Autoridades</router-link></li>
-          <li><router-link to="/documentos">Documentos</router-link></li>
         </ul>
       </nav>
 
@@ -64,27 +63,12 @@
       <!-- Sidebar Navigation -->
       <nav class="sidebar-nav">
         <ul class="sidebar-menu">
-          <li>
-            <router-link to="/" @click="closeMenu"> Inicio </router-link>
-          </li>
-          <li>
-            <router-link to="/sobre-nosotros" @click="closeMenu">
-              Sobre Nosotros
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/programas" @click="closeMenu">
-              Programas
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/autoridades" @click="closeMenu">
-              Autoridades
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/documentos" @click="closeMenu">
-              Documentos
+          <li
+            v-for="item in menu.length > 0 ? menu : defaultMenu"
+            :key="item.path"
+          >
+            <router-link :to="item.path" @click="closeMenu">
+              {{ item.label }}
             </router-link>
           </li>
         </ul>
@@ -103,8 +87,19 @@
 
 <script setup>
 import { ref, onUnmounted } from "vue";
+import { useTenant } from "@/composables/useTenant";
 
+const { menu } = useTenant();
 const menuOpen = ref(false);
+
+// Menú por defecto mientras carga el tenant
+const defaultMenu = [
+  { label: "Inicio", path: "/" },
+  { label: "Sobre Nosotros", path: "/sobre-nosotros" },
+  { label: "Programas", path: "/programas" },
+  { label: "Autoridades", path: "/autoridades" },
+  { label: "Documentos", path: "/documentos" },
+];
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value;

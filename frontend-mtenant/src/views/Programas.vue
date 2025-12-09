@@ -103,45 +103,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { useTenant } from "@/composables/useTenant";
 
-// TODO: Conectar con el store cuando esté disponible
-const programas = ref([
-  {
-    id: 1,
-    nombre: "Bachiller en Electronica",
-    descripcion:
-      "Programa integral que prepara a los estudiantes en teoría económica y aplicaciones prácticas.",
-    perfil_egresado:
-      "Profesional capaz de analizar y resolver problemas económicos.",
-    campo_laboral: "Bancos, empresas privadas, sector público.",
-    duracion: "4 años",
-    malla_curricular: "/documentos/malla-economia.pdf",
-  },
-  {
-    id: 2,
-    nombre: "Maestría en Electronica",
-    descripcion:
-      "Programa avanzado enfocado en finanzas corporativas y mercados.",
-    perfil_egresado:
-      "Especialista en gestión financiera y análisis de inversiones.",
-    campo_laboral: "Instituciones financieras, consultorías.",
-    duracion: "2 años",
-    malla_curricular: "/documentos/malla-finanzas.pdf",
-  },
-  {
-    id: 3,
-    nombre: "Ingeniería Electrónica",
-    descripcion:
-      "Formación integral en sistemas electrónicos, telecomunicaciones y control automático.",
-    perfil_egresado:
-      "Ingeniero capacitado para diseñar, implementar y mantener sistemas electrónicos complejos.",
-    campo_laboral:
-      "Industria tecnológica, telecomunicaciones, automatización industrial, investigación y desarrollo.",
-    duracion: "5 años",
-    malla_curricular: "/documentos/malla-electronica.pdf",
-  },
-]);
+const { programas, isLoading } = useTenant();
 </script>
 
 <style scoped>

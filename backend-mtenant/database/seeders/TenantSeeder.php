@@ -15,21 +15,22 @@ class TenantSeeder extends Seeder
      */
     public function run(): void
     {
-        // Crear Facultad de Ingeniería
+        // Crear Facultad de Ingeniería Electrónica
         $ingenieria = Tenant::create([
-            'nombre' => 'Facultad de Ingeniería',
+            'nombre' => 'Facultad de Ingeniería Electrónica',
             'subdomain' => 'ingenieria',
             'color_primario' => '#3b82f6',
             'color_secundario' => '#1e40af',
             'color_acento' => '#60a5fa',
-            'presentacion_titulo' => 'Bienvenidos a la Facultad de Ingeniería',
-            'presentacion_texto' => 'Somos una facultad comprometida con la excelencia académica y la formación de profesionales altamente capacitados en las áreas de ingeniería. Nuestra misión es contribuir al desarrollo tecnológico y científico del país mediante la investigación, innovación y el servicio a la comunidad.',
-            'historia' => 'Fundada en 1985, la Facultad de Ingeniería ha sido pionera en la formación de profesionales en diversas ramas de la ingeniería. Con más de 35 años de trayectoria, hemos graduado a miles de ingenieros que hoy contribuyen al desarrollo del país y el mundo.',
-            'mision' => 'Formar profesionales íntegros y competentes en ingeniería, con sólidos conocimientos científicos, tecnológicos y humanísticos, capaces de contribuir al desarrollo sostenible de la sociedad mediante la investigación, innovación y el servicio.',
-            'vision' => 'Ser una facultad líder a nivel nacional e internacional, reconocida por la excelencia académica, la investigación de calidad y la formación de profesionales competitivos que impulsen el desarrollo tecnológico y científico.',
-            'email' => 'ingenieria@universidad.edu',
-            'telefono' => '+591 3 1234567',
-            'direccion' => 'Av. Principal 123, Campus Universitario',
+            'presentacion_titulo' => 'Bienvenidos a la Facultad de Ingeniería Electrónica',
+            'presentacion_texto' => 'Somos una facultad comprometida con la excelencia académica y la formación de profesionales altamente capacitados en las áreas de ingeniería electrónica. Nuestra misión es contribuir al desarrollo tecnológico y científico del país mediante la investigación, innovación y el servicio a la comunidad.',
+            'historia' => 'Fundada en 1985, la Facultad de Ingeniería Electrónica ha sido pionera en la formación de profesionales en diversas ramas de la ingeniería electrónica. Con más de 35 años de trayectoria, hemos graduado a miles de ingenieros que hoy contribuyen al desarrollo del país y el mundo.',
+            'mision' => 'Formar profesionales íntegros y competentes en ingeniería electrónica, con sólidos conocimientos científicos, tecnológicos y humanísticos, capaces de contribuir al desarrollo sostenible de la sociedad mediante la investigación, innovación y el servicio.',
+            'vision' => 'Ser una facultad líder a nivel nacional e internacional, reconocida por la excelencia académica, la investigación de calidad y la formación de profesionales competitivos que impulsen el desarrollo tecnológico y científico en el área de ingeniería electrónica.',
+            'propositos' => 'Formar profesionales de excelencia en ingeniería electrónica con capacidades para diseñar, implementar y gestionar sistemas tecnológicos innovadores que contribuyan al desarrollo sostenible. Fomentar la investigación científica y tecnológica en áreas estratégicas de la electrónica, promoviendo la generación de conocimiento aplicable a las necesidades del entorno. Establecer vínculos con el sector productivo para facilitar la inserción laboral de nuestros egresados y contribuir al desarrollo regional y nacional.',
+            'email' => 'info@facultad.edu',
+            'telefono' => '+1234567890',
+            'direccion' => 'Av. Universidad 123, Ciudad',
             'ofrecemos' => [
                 [
                     'titulo' => 'Educación de Calidad',
@@ -52,6 +53,67 @@ class TenantSeeder extends Seeder
                     'imagen' => null
                 ]
             ],
+            'cifras' => [
+                [
+                    'icon' => 'bi bi-person-workspace',
+                    'number' => '1,500',
+                    'label' => 'Estudiantes'
+                ],
+                [
+                    'icon' => 'bi bi-people-fill',
+                    'number' => '47',
+                    'label' => 'Docentes'
+                ],
+                [
+                    'icon' => 'bi bi-easel2',
+                    'number' => '40',
+                    'label' => 'Docentes Investigadores'
+                ],
+                [
+                    'icon' => 'bi bi-journal-text',
+                    'number' => '450',
+                    'label' => 'Tesis Sustentadas'
+                ]
+            ],
+            'plan_estudios' => [
+                [
+                    'titulo' => 'Pregrado',
+                    'contenido' => 'Nuestros programas de pregrado ofrecen una formación integral en ingeniería electrónica, combinando teoría y práctica mediante laboratorios especializados, proyectos de investigación y vinculación con la industria. Los estudiantes desarrollan competencias en diseño de sistemas electrónicos, programación, automatización y control de procesos.'
+                ],
+                [
+                    'titulo' => 'Posgrado',
+                    'contenido' => 'Los programas de posgrado están orientados a la especialización y profundización en áreas específicas de la ingeniería electrónica, incluyendo maestrías en sistemas embebidos, telecomunicaciones avanzadas, y automatización industrial. Nuestros egresados de posgrado lideran proyectos de innovación tecnológica en empresas e instituciones de alto nivel.'
+                ]
+            ],
+            'lineas_investigacion' => [
+                [
+                    'icon' => 'bi bi-code-slash',
+                    'title' => 'Desarrollo de Software',
+                    'description' => 'Diseño e implementación de soluciones tecnológicas innovadoras con enfoque en calidad y eficiencia.'
+                ],
+                [
+                    'icon' => 'bi bi-cpu',
+                    'title' => 'Modelos Estadísticos y Algoritmos Computacionales',
+                    'description' => 'Investigación en algoritmos avanzados y técnicas de modelado para análisis predictivo y toma de decisiones basada en datos.'
+                ],
+                [
+                    'icon' => 'bi bi-diagram-3',
+                    'title' => 'Redes y Comunicaciones',
+                    'description' => 'Desarrollo e implementación de infraestructuras de redes eficientes y seguras para entornos empresariales y académicos.'
+                ],
+                [
+                    'icon' => 'bi bi-database',
+                    'title' => 'Bases de Datos y Analítica',
+                    'description' => 'Investigación en gestión eficiente de datos, sistemas de información y tecnologías emergentes para el análisis y visualización de grandes volúmenes de información.'
+                ]
+            ],
+            'menu' => [
+                ['label' => 'Inicio', 'path' => '/'],
+                ['label' => 'Sobre Nosotros', 'path' => '/sobre-nosotros'],
+                ['label' => 'Programas', 'path' => '/programas'],
+                ['label' => 'Autoridades', 'path' => '/autoridades'],
+                ['label' => 'Documentos', 'path' => '/documentos']
+            ],
             'redes_sociales' => [
                 'facebook' => 'https://facebook.com/facultad.ingenieria',
                 'instagram' => 'https://instagram.com/facultad.ingenieria',
@@ -61,56 +123,56 @@ class TenantSeeder extends Seeder
             'activo' => true,
         ]);
 
-        // Programas de Ingeniería
+        // Programas de Ingeniería Electrónica
         $ingenieria->programas()->createMany([
             [
-                'nombre' => 'Ingeniería de Sistemas',
-                'descripcion' => 'Programa enfocado en el desarrollo de sistemas de información, software y soluciones tecnológicas innovadoras.',
-                'perfil_egresado' => 'Profesional capaz de diseñar, desarrollar e implementar sistemas de información, aplicaciones web y móviles, así como gestionar proyectos tecnológicos.',
-                'campo_laboral' => 'Empresas de desarrollo de software, departamentos de TI, consultoría tecnológica, emprendimientos digitales.',
-                'duracion' => '5 años',
+                'nombre' => 'Bachiller en Electrónica',
+                'descripcion' => 'Programa integral que prepara a los estudiantes en teoría electrónica y aplicaciones prácticas en sistemas digitales, analógicos y de potencia.',
+                'perfil_egresado' => 'Profesional capaz de analizar, diseñar e implementar sistemas electrónicos para diversos sectores industriales.',
+                'campo_laboral' => 'Industrias tecnológicas, empresas de telecomunicaciones, sector automotriz, automatización industrial.',
+                'duracion' => '4 años',
                 'orden' => 1
             ],
             [
-                'nombre' => 'Ingeniería Civil',
-                'descripcion' => 'Formación integral en diseño, construcción y gestión de obras civiles e infraestructura.',
-                'perfil_egresado' => 'Profesional capacitado para diseñar, ejecutar y supervisar proyectos de infraestructura, construcción y obras civiles.',
-                'campo_laboral' => 'Empresas constructoras, consultorías de ingeniería, organismos públicos, gestión de proyectos.',
-                'duracion' => '5 años',
+                'nombre' => 'Maestría en Electrónica',
+                'descripcion' => 'Programa avanzado enfocado en diseño de sistemas electrónicos complejos, investigación y desarrollo tecnológico.',
+                'perfil_egresado' => 'Especialista en diseño y gestión de proyectos de alta complejidad en electrónica avanzada.',
+                'campo_laboral' => 'Centros de investigación, empresas de alta tecnología, desarrollo de productos innovadores.',
+                'duracion' => '2 años',
                 'orden' => 2
             ],
             [
-                'nombre' => 'Ingeniería Industrial',
-                'descripcion' => 'Programa orientado a la optimización de procesos, gestión de operaciones y mejora continua.',
-                'perfil_egresado' => 'Profesional capaz de optimizar procesos productivos, gestionar la calidad y dirigir proyectos industriales.',
-                'campo_laboral' => 'Industrias manufactureras, empresas de servicios, logística, consultoría en procesos.',
+                'nombre' => 'Ingeniería Electrónica',
+                'descripcion' => 'Formación integral en sistemas electrónicos, telecomunicaciones y control automático con enfoque en innovación tecnológica.',
+                'perfil_egresado' => 'Ingeniero capacitado para diseñar, implementar y mantener sistemas electrónicos complejos, con competencias en programación, automatización y gestión de proyectos tecnológicos.',
+                'campo_laboral' => 'Industria tecnológica, telecomunicaciones, automatización industrial, investigación y desarrollo, consultoría técnica.',
                 'duracion' => '5 años',
                 'orden' => 3
             ]
         ]);
 
-        // Autoridades de Ingeniería
+        // Autoridades de Ingeniería Electrónica
         $ingenieria->autoridades()->createMany([
             [
                 'cargo' => 'Decano',
-                'nombre' => 'Dr. Carlos Méndez Salazar',
+                'nombre' => 'Dr. Juan Pérez',
                 'email' => 'decano.ingenieria@universidad.edu',
                 'telefono' => '+591 3 1234568',
                 'oficina' => 'Edificio Central - Oficina 301',
                 'orden' => 1
             ],
             [
-                'cargo' => 'Vicedecano Académico',
-                'nombre' => 'Mg. Ana Patricia Rivas',
-                'email' => 'vicedecano.academico@universidad.edu',
+                'cargo' => 'Dirección de Departamento Académico',
+                'nombre' => 'Dra. María García',
+                'email' => 'dda.ingenieria@universidad.edu',
                 'telefono' => '+591 3 1234569',
                 'oficina' => 'Edificio Central - Oficina 302',
                 'orden' => 2
             ],
             [
-                'cargo' => 'Director de Investigación',
-                'nombre' => 'PhD. Roberto Gutiérrez',
-                'email' => 'investigacion.ingenieria@universidad.edu',
+                'cargo' => 'Dirección de Escuela Profesional',
+                'nombre' => 'Ing. Carlos López',
+                'email' => 'dep.ingenieria@universidad.edu',
                 'telefono' => '+591 3 1234570',
                 'oficina' => 'Edificio de Investigación - Oficina 101',
                 'orden' => 3

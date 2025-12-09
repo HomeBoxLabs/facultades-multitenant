@@ -11,10 +11,9 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
+    port: 5173,
     host: true,
-    open: false,
+    open: true,
     strictPort: false,
-    allowedHosts: ["janine-gatherable-tyisha.ngrok-free.dev"],
   },
 });

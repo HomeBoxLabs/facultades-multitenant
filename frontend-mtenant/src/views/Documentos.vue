@@ -1,7 +1,16 @@
 <template>
   <main class="main">
     <!-- Hero Section -->
-    <section class="documentos-hero section" style="background-color: color-mix(in srgb, var(--accent-color), transparent 97%);">
+    <section
+      class="documentos-hero section"
+      style="
+        background-color: color-mix(
+          in srgb,
+          var(--accent-color),
+          transparent 97%
+        );
+      "
+    >
       <div class="container" data-aos="fade-up">
         <div class="section-title text-center">
           <h1>Documentos</h1>
@@ -15,10 +24,18 @@
       <div class="container">
         <div v-if="documentos.length > 0">
           <!-- Filtros por categoría -->
-          <div v-if="categorias.length > 1" class="filters mb-4" data-aos="fade-up">
+          <div
+            v-if="categorias.length > 1"
+            class="filters mb-4"
+            data-aos="fade-up"
+          >
             <button
               @click="selectedCategoria = null"
-              :class="['btn', 'filter-btn', { active: selectedCategoria === null }]"
+              :class="[
+                'btn',
+                'filter-btn',
+                { active: selectedCategoria === null },
+              ]"
             >
               Todos
             </button>
@@ -26,7 +43,11 @@
               v-for="categoria in categorias"
               :key="categoria"
               @click="selectedCategoria = categoria"
-              :class="['btn', 'filter-btn', { active: selectedCategoria === categoria }]"
+              :class="[
+                'btn',
+                'filter-btn',
+                { active: selectedCategoria === categoria },
+              ]"
             >
               {{ categoria }}
             </button>
@@ -88,93 +109,57 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed } from "vue";
+import { useTenant } from "@/composables/useTenant";
 
-// TODO: Conectar con el store cuando esté disponible
-const documentos = ref([
-  {
-    id: 1,
-    titulo: 'Reglamento Académico',
-    descripcion: 'Normas y procedimientos académicos.',
-    categoria: 'Normativa',
-    fecha: '2022-12-31',
-    url: '/documentos/reglamento.pdf'
-  },
-  {
-    id: 2,
-    titulo: 'Calendario Académico',
-    descripcion: 'Fechas importantes del año académico.',
-    categoria: 'Académico',
-    fecha: '2022-12-31',
-    url: '/documentos/calendario.pdf'
-  },
-  {
-    id: 3,
-    titulo: 'Plan de Estudios 2024',
-    descripcion: 'Plan curricular actualizado con todas las asignaturas y requisitos.',
-    categoria: 'Académico',
-    fecha: '2024-01-15',
-    url: '/documentos/plan-estudios.pdf'
-  },
-  {
-    id: 4,
-    titulo: 'Manual del Estudiante',
-    descripcion: 'Guía completa para estudiantes de la facultad.',
-    categoria: 'Guías',
-    fecha: '2023-08-01',
-    url: '/documentos/manual-estudiante.pdf'
-  },
-  {
-    id: 5,
-    titulo: 'Reglamento de Prácticas',
-    descripcion: 'Normativa para la realización de prácticas pre-profesionales.',
-    categoria: 'Normativa',
-    fecha: '2023-05-20',
-    url: '/documentos/reglamento-practicas.pdf'
-  }
-])
-const selectedCategoria = ref(null)
+const { documentos, isLoading } = useTenant();
+const selectedCategoria = ref(null);
 
 // Obtener categorías únicas
 const categorias = computed(() => {
   const cats = documentos.value
-    .map(doc => doc.categoria)
-    .filter(cat => cat)
-  return [...new Set(cats)]
-})
+    .map((doc) => doc.categoria)
+    .filter((cat) => cat);
+  return [...new Set(cats)];
+});
 
 // Filtrar documentos
 const documentosFiltrados = computed(() => {
   if (!selectedCategoria.value) {
-    return documentos.value
+    return documentos.value;
   }
-  return documentos.value.filter(doc => doc.categoria === selectedCategoria.value)
-})
+  return documentos.value.filter(
+    (doc) => doc.categoria === selectedCategoria.value
+  );
+});
 
 // Obtener icono según tipo de archivo
 const getFileIcon = (url) => {
-  if (!url) return 'bi bi-file-earmark'
-  const extension = url.split('.').pop().toLowerCase()
+  if (!url) return "bi bi-file-earmark";
+  const extension = url.split(".").pop().toLowerCase();
 
-  if (extension === 'pdf') return 'bi bi-file-earmark-pdf-fill'
-  if (['doc', 'docx'].includes(extension)) return 'bi bi-file-earmark-word-fill'
-  if (['xls', 'xlsx'].includes(extension)) return 'bi bi-file-earmark-excel-fill'
-  if (['ppt', 'pptx'].includes(extension)) return 'bi bi-file-earmark-ppt-fill'
-  if (['zip', 'rar', '7z'].includes(extension)) return 'bi bi-file-earmark-zip-fill'
+  if (extension === "pdf") return "bi bi-file-earmark-pdf-fill";
+  if (["doc", "docx"].includes(extension))
+    return "bi bi-file-earmark-word-fill";
+  if (["xls", "xlsx"].includes(extension))
+    return "bi bi-file-earmark-excel-fill";
+  if (["ppt", "pptx"].includes(extension)) return "bi bi-file-earmark-ppt-fill";
+  if (["zip", "rar", "7z"].includes(extension))
+    return "bi bi-file-earmark-zip-fill";
 
-  return 'bi bi-file-earmark'
-}
+  return "bi bi-file-earmark";
+};
 
 // Formatear fecha
 const formatDate = (date) => {
-  if (!date) return ''
-  const d = new Date(date)
-  return d.toLocaleDateString('es-ES', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+  if (!date) return "";
+  const d = new Date(date);
+  return d.toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
 </script>
 
 <style scoped>
@@ -247,7 +232,11 @@ const formatDate = (date) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 30%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), transparent 30%)
+  );
   border-radius: 12px;
   color: white;
   flex-shrink: 0;

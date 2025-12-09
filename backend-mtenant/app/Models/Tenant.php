@@ -19,9 +19,13 @@ class Tenant extends Model
         'presentacion_titulo',
         'presentacion_texto',
         'ofrecemos',
+        'cifras',
         'historia',
         'mision',
         'vision',
+        'propositos',
+        'plan_estudios',
+        'lineas_investigacion',
         'organigrama',
         'email',
         'telefono',
@@ -33,6 +37,9 @@ class Tenant extends Model
     protected $casts = [
         'menu' => 'array',
         'ofrecemos' => 'array',
+        'cifras' => 'array',
+        'plan_estudios' => 'array',
+        'lineas_investigacion' => 'array',
         'redes_sociales' => 'array',
         'activo' => 'boolean',
     ];

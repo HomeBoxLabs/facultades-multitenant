@@ -7,6 +7,7 @@ Sistema completo para gestionar múltiples facultades con **Vue.js 3** (frontend
 ## 🚀 Inicio Rápido
 
 ### 1. Backend (Laravel)
+
 ```bash
 cd backend-mtenant
 composer install
@@ -19,14 +20,17 @@ php artisan db:seed
 php artisan storage:link
 php artisan serve
 ```
+
 ✅ Backend en: http://localhost:8000
 
 ### 2. Frontend (Vue.js)
+
 ```bash
 cd frontend-mtenant
 npm install
 npm run dev
 ```
+
 ✅ Frontend en: http://localhost:5173
 
 ---
@@ -34,6 +38,7 @@ npm run dev
 ## 📚 Documentación
 
 ### 📱 [FRONTEND.md](FRONTEND.md)
+
 - Estructura del proyecto Vue
 - Componentes y vistas
 - Animaciones y estilos
@@ -41,6 +46,7 @@ npm run dev
 - Tips de desarrollo
 
 ### 🔧 [BACKEND.md](BACKEND.md)
+
 - API REST endpoints
 - Modelos y relaciones
 - Configuración Laravel
@@ -48,6 +54,7 @@ npm run dev
 - Producción
 
 ### 💾 [BASE_DE_DATOS.md](BASE_DE_DATOS.md)
+
 - Estructura de tablas
 - Cómo agregar datos
 - Cómo subir imágenes
@@ -59,6 +66,7 @@ npm run dev
 ## ✨ Características
 
 ### Frontend:
+
 - ✅ Diseño moderno con animaciones
 - ✅ Responsive (móvil, tablet, desktop)
 - ✅ Colores dinámicos por facultad
@@ -66,6 +74,7 @@ npm run dev
 - ✅ 100% sin datos hardcodeados
 
 ### Backend:
+
 - ✅ API RESTful con Laravel 11
 - ✅ Base de datos MySQL
 - ✅ Sistema de archivos (storage)
@@ -77,9 +86,11 @@ npm run dev
 ## 🎨 Demo
 
 ### Facultad de Ingeniería (Azul)
+
 http://localhost:5173?tenant_id=1
 
 ### Facultad de Economía (Verde)
+
 http://localhost:5173?tenant_id=2
 
 ---
@@ -120,16 +131,20 @@ Frotend-Tenant/
 ## 🔑 Conceptos Clave
 
 ### Multi-Tenant
+
 Cada facultad es un "tenant" con:
+
 - Sus propios colores
 - Su propio contenido
 - Sus propios programas
 - Sus propias autoridades
 
 ### Colores Dinámicos
+
 Los colores cambian automáticamente según la facultad activa.
 
 ### Sin Hardcodeo
+
 Todo viene de la base de datos. Cero datos fijos en el código.
 
 ---
@@ -137,6 +152,7 @@ Todo viene de la base de datos. Cero datos fijos en el código.
 ## 🛠️ Tecnologías
 
 ### Frontend:
+
 - Vue.js 3.5
 - Vite 7.2
 - Vue Router 4
@@ -146,6 +162,7 @@ Todo viene de la base de datos. Cero datos fijos en el código.
 - Google Fonts (Inter)
 
 ### Backend:
+
 - Laravel 11
 - PHP 8.2+
 - MySQL 5.7+
@@ -158,12 +175,14 @@ Todo viene de la base de datos. Cero datos fijos en el código.
 El sistema incluye 2 facultades de ejemplo:
 
 ### 1. Facultad de Ingeniería
+
 - Color: Azul (#3b82f6)
 - 3 programas académicos
 - 3 autoridades
 - 3 documentos
 
 ### 2. Facultad de Ciencias Económicas
+
 - Color: Verde (#10b981)
 - 2 programas académicos
 - 2 autoridades
@@ -174,16 +193,19 @@ El sistema incluye 2 facultades de ejemplo:
 ## 🎯 Uso Básico
 
 ### Ver una facultad:
+
 ```
 http://localhost:5173?tenant_id=1
 ```
 
 ### Cambiar de facultad:
+
 ```
 http://localhost:5173?tenant_id=2
 ```
 
 ### Por subdominio:
+
 ```
 http://localhost:5173?facultad=ingenieria
 http://localhost:5173?facultad=economia
@@ -194,24 +216,29 @@ http://localhost:5173?facultad=economia
 ## ⚠️ Troubleshooting
 
 ### Frontend muestra "Cargando..."
+
 1. Verifica que el backend esté corriendo
 2. Abre la consola del navegador (F12)
 3. Verifica la URL de la API en `frontend-mtenant/.env`
 
 ### Error de CORS
+
 ```bash
 cd backend-mtenant
 php artisan config:clear
 ```
 
 ### Imágenes no se ven
+
 ```bash
 cd backend-mtenant
 php artisan storage:link
 ```
 
 ### Más ayuda
+
 Consulta los archivos de documentación:
+
 - [FRONTEND.md](FRONTEND.md)
 - [BACKEND.md](BACKEND.md)
 - [BASE_DE_DATOS.md](BASE_DE_DATOS.md)
@@ -230,6 +257,7 @@ Consulta los archivos de documentación:
 ## 🎨 Personalización
 
 ### Agregar nueva facultad:
+
 ```sql
 INSERT INTO tenants (nombre, subdomain, color_primario, color_secundario, email)
 VALUES ('Facultad de Medicina', 'medicina', '#ef4444', '#dc2626', 'medicina@uni.edu');

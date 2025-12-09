@@ -17,12 +17,7 @@
           </h1>
 
           <p class="hero-description mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            {{ description }}
           </p>
         </div>
 
@@ -38,35 +33,57 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { useTenant } from "@/composables/useTenant";
 import CarruselNoticias from "@/components/ui/CarruselNoticias.vue";
 import FeatureBoxes from "@/components/ui/FeatureBoxes.vue";
 
-const titleWords = "Facultad de Ingeniería Electrónica".split(" ");
+const { tenant } = useTenant();
+
+const props = defineProps({
+  features: {
+    type: Array,
+    default: () => [],
+  },
+});
+
+const title = computed(
+  () =>
+    tenant.value?.presentacion_titulo || "Facultad de Ingeniería Electrónica"
+);
+const description = computed(
+  () => tenant.value?.presentacion_texto || "Cargando..."
+);
+
+const titleWords = computed(() => title.value.split(" "));
 const wordDelay = 90;
 
-const quickAccessFeatures = [
-  {
-    icon: "bi bi-book",
-    title: "Aula Virtual",
-    description:
-      "Accede a la plataforma de educación virtual de la UNAP para consultar tus cursos, materiales y calificaciones en línea.",
-    url: "https://aulavirtual2.unap.edu.pe/login?ReturnUrl=%2F",
-  },
-  {
-    icon: "bi bi-journal-bookmark",
-    title: "Biblioteca",
-    description:
-      "Consulta el catálogo bibliográfico, reserva materiales y accede a recursos digitales desde nuestra biblioteca universitaria.",
-    url: "https://biblioteca.unap.edu.pe/opac_css/",
-  },
-  {
-    icon: "bi bi-globe",
-    title: "Convenios",
-    description:
-      "Explora los convenios nacionales e internacionales de la UNAP para oportunidades de intercambio y colaboración académica.",
-    url: "https://ocri.unap.edu.pe/convenios",
-  },
-];
+const quickAccessFeatures =
+  props.features.length > 0
+    ? props.features
+    : [
+        {
+          icon: "bi bi-book",
+          title: "Aula Virtual",
+          description:
+            "Accede a la plataforma de educación virtual de la UNAP para consultar tus cursos, materiales y calificaciones en línea.",
+          url: "https://aulavirtual2.unap.edu.pe/login?ReturnUrl=%2F",
+        },
+        {
+          icon: "bi bi-journal-bookmark",
+          title: "Biblioteca",
+          description:
+            "Consulta el catálogo bibliográfico, reserva materiales y accede a recursos digitales desde nuestra biblioteca universitaria.",
+          url: "https://biblioteca.unap.edu.pe/opac_css/",
+        },
+        {
+          icon: "bi bi-globe",
+          title: "Convenios",
+          description:
+            "Explora los convenios nacionales e internacionales de la UNAP para oportunidades de intercambio y colaboración académica.",
+          url: "https://ocri.unap.edu.pe/convenios",
+        },
+      ];
 </script>
 
 <style scoped>

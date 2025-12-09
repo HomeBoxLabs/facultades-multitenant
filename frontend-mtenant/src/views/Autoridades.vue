@@ -146,27 +146,9 @@
 
 <script setup>
 import { ref } from "vue";
+import { useTenant } from "@/composables/useTenant";
 
-const autoridades = ref([
-  {
-    id: 1,
-    cargo: "Decano",
-    nombre: "Dr. Juan Pérez",
-    foto: "/img/autoridad/decano.png",
-  },
-  {
-    id: 2,
-    cargo: "Dirección de Departamento Académico",
-    nombre: "Dra. María García",
-    foto: "/img/autoridad/decano.png",
-  },
-  {
-    id: 3,
-    cargo: "Dirección de Escuela Profesional",
-    nombre: "Ing. Carlos López",
-    foto: "/img/autoridad/decano.png",
-  },
-]);
+const { autoridades, isLoading } = useTenant();
 
 const equipoAdministrativo = ref([
   {

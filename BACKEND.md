@@ -57,21 +57,23 @@ backend-mtenant/
 ## 🔌 API Endpoints
 
 ### Base URL
+
 ```
 http://localhost:8000/api
 ```
 
 ### Endpoints:
 
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| GET | `/tenant` | Tenant actual (primero) |
-| GET | `/tenant?tenant_id=1` | Por ID |
-| GET | `/tenant?subdomain=ingenieria` | Por subdominio |
-| GET | `/tenant/{id}` | Específico |
-| GET | `/tenant/all` | Todos |
+| Método | Endpoint                       | Descripción             |
+| ------ | ------------------------------ | ----------------------- |
+| GET    | `/tenant`                      | Tenant actual (primero) |
+| GET    | `/tenant?tenant_id=1`          | Por ID                  |
+| GET    | `/tenant?subdomain=ingenieria` | Por subdominio          |
+| GET    | `/tenant/{id}`                 | Específico              |
+| GET    | `/tenant/all`                  | Todos                   |
 
 ### Ejemplo de Respuesta:
+
 ```json
 {
   "data": {
@@ -96,6 +98,7 @@ http://localhost:8000/api
 ## 🗄️ Modelos
 
 ### Tenant
+
 ```php
 // Relaciones
 $tenant->programas      // HasMany
@@ -108,17 +111,20 @@ $tenant->banner_url     // URL completa
 ```
 
 ### Programa
+
 ```php
 $programa->tenant       // BelongsTo
 ```
 
 ### Autoridad
+
 ```php
 $autoridad->tenant      // BelongsTo
 $autoridad->foto_url    // URL completa
 ```
 
 ### Documento
+
 ```php
 $documento->tenant      // BelongsTo
 $documento->archivo_url // URL completa
@@ -129,6 +135,7 @@ $documento->archivo_url // URL completa
 ## ⚙️ Configuración
 
 ### .env (MySQL)
+
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -141,6 +148,7 @@ APP_URL=http://localhost:8000
 ```
 
 ### CORS (config/cors.php)
+
 ```php
 'allowed_origins' => [
     'http://localhost:5173',  // Frontend
@@ -153,6 +161,7 @@ APP_URL=http://localhost:8000
 ## 📦 Migraciones
 
 ### Ejecutar:
+
 ```bash
 php artisan migrate          # Crear tablas
 php artisan migrate:fresh    # Resetear + crear
@@ -160,6 +169,7 @@ php artisan migrate:fresh --seed  # + datos
 ```
 
 ### Tablas creadas:
+
 - `tenants` - Facultades
 - `programas` - Programas académicos
 - `autoridades` - Autoridades
@@ -170,12 +180,14 @@ php artisan migrate:fresh --seed  # + datos
 ## 🌱 Seeders
 
 ### Ejecutar:
+
 ```bash
 php artisan db:seed                      # Todos
 php artisan db:seed --class=TenantSeeder # Solo tenants
 ```
 
 ### Datos creados:
+
 - 2 facultades (Ingeniería, Economía)
 - 5 programas académicos
 - 5 autoridades
@@ -186,6 +198,7 @@ php artisan db:seed --class=TenantSeeder # Solo tenants
 ## 📂 Storage (Archivos)
 
 ### Crear enlace simbólico:
+
 ```bash
 php artisan storage:link
 ```
@@ -193,6 +206,7 @@ php artisan storage:link
 Esto crea: `public/storage` → `storage/app/public`
 
 ### Estructura:
+
 ```
 storage/app/public/
 ├── logos/          # Logos de facultades
@@ -203,6 +217,7 @@ storage/app/public/
 ```
 
 ### URLs generadas automáticamente:
+
 ```php
 // En modelo Tenant
 public function getLogoUrlAttribute() {
@@ -239,6 +254,7 @@ tail -f storage/logs/laravel.log
 ## 🧪 Testing
 
 ### Probar API:
+
 ```bash
 # Tenant actual
 curl http://localhost:8000/api/tenant
@@ -251,6 +267,7 @@ curl http://localhost:8000/api/tenant/all
 ```
 
 ### Con navegador:
+
 - http://localhost:8000/api/tenant
 - http://localhost:8000/api/tenant/1
 - http://localhost:8000/api/tenant/all
@@ -260,17 +277,20 @@ curl http://localhost:8000/api/tenant/all
 ## 💡 Tips de Desarrollo
 
 ### Crear nuevo modelo:
+
 ```bash
 php artisan make:model MiModelo -m
 # -m = migración
 ```
 
 ### Crear controlador:
+
 ```bash
 php artisan make:controller MiController
 ```
 
 ### Tinker (modificar datos):
+
 ```bash
 php artisan tinker
 
@@ -284,6 +304,7 @@ $tenant->save();
 ## 🚀 Producción
 
 ### 1. Configurar .env:
+
 ```env
 APP_ENV=production
 APP_DEBUG=false
@@ -291,6 +312,7 @@ APP_URL=https://tu-dominio.com
 ```
 
 ### 2. Optimizar:
+
 ```bash
 composer install --optimize-autoloader --no-dev
 php artisan config:cache
@@ -299,6 +321,7 @@ php artisan view:cache
 ```
 
 ### 3. Permisos:
+
 ```bash
 chmod -R 775 storage bootstrap/cache
 chown -R www-data:www-data storage bootstrap/cache
@@ -309,19 +332,23 @@ chown -R www-data:www-data storage bootstrap/cache
 ## ⚠️ Troubleshooting
 
 ### Error: Connection refused
+
 - Verifica que MySQL esté corriendo
 - Verifica credenciales en `.env`
 - Crea la base de datos manualmente
 
 ### Error: CORS
+
 - Verifica `config/cors.php`
 - Limpia caché: `php artisan config:clear`
 
 ### Error: 404 en API
+
 - Verifica que uses `/api` en la URL
 - Limpia rutas: `php artisan route:clear`
 
 ### Storage link no funciona
+
 ```bash
 # Eliminar y recrear
 rm public/storage

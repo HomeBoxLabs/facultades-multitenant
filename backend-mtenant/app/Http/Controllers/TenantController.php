@@ -93,9 +93,13 @@ class TenantController extends Controller
             'presentacion_titulo' => $tenant->presentacion_titulo,
             'presentacion_texto' => $tenant->presentacion_texto,
             'ofrecemos' => $tenant->ofrecemos ?? [],
+            'cifras' => $tenant->cifras ?? [],
             'historia' => $tenant->historia,
             'mision' => $tenant->mision,
             'vision' => $tenant->vision,
+            'propositos' => $tenant->propositos,
+            'plan_estudios' => $tenant->plan_estudios ?? [],
+            'lineas_investigacion' => $tenant->lineas_investigacion ?? [],
             'organigrama' => $tenant->organigrama_url,
             'programas' => $tenant->programas->map(function ($programa) {
                 return [

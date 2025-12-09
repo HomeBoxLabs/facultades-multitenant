@@ -1,19 +1,26 @@
 <template>
   <footer id="footer" class="footer light-background">
-
     <div class="container footer-top">
       <div class="footer-grid">
-
         <!-- Columnas 1 y 2 combinadas (más ancha) -->
         <div class="footer-col footer-col-main">
           <a href="/" class="logo d-flex align-items-center mb-3">
-            <span class="sitename">Facultad de Ingeniería Electrónica</span>
+            <span class="sitename">{{
+              tenant?.nombre || "Facultad de Ingeniería Electrónica"
+            }}</span>
           </a>
           <div class="footer-contact">
-            <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>Av. Universidad 123, Ciudad</p>
+            <p v-if="tenant?.direccion" class="mb-2">
+              <i class="bi bi-geo-alt-fill me-2"></i>{{ tenant.direccion }}
+            </p>
             <p class="mb-0 fw-bold">Contactos</p>
-            <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>Tel: +1234567890</p>
-            <p class="mb-3"><i class="bi bi-envelope-fill me-2"></i>Email: info@facultad.edu</p>
+            <p v-if="tenant?.telefono" class="mb-1">
+              <i class="bi bi-telephone-fill me-2"></i>Tel:
+              {{ tenant.telefono }}
+            </p>
+            <p v-if="tenant?.email" class="mb-3">
+              <i class="bi bi-envelope-fill me-2"></i>Email: {{ tenant.email }}
+            </p>
           </div>
         </div>
 
@@ -21,10 +28,9 @@
         <div class="footer-col">
           <h4>Enlaces Rápidos</h4>
           <ul class="footer-links">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
-            <li><a href="/programas">Programas</a></li>
-            <li><a href="/documentos">Documentos</a></li>
+            <li v-for="item in menu" :key="item.path">
+              <a :href="item.path">{{ item.label }}</a>
+            </li>
           </ul>
         </div>
 
@@ -32,35 +38,63 @@
         <div class="footer-col">
           <h4>Síguenos</h4>
           <div class="social-links">
-            <a href="#" aria-label="Facebook" title="Facebook">
+            <a
+              v-if="tenant?.redes_sociales?.facebook"
+              :href="tenant.redes_sociales.facebook"
+              target="_blank"
+              aria-label="Facebook"
+              title="Facebook"
+            >
               <i class="bi bi-facebook"></i>
             </a>
-            <a href="#" aria-label="X (Twitter)" title="X (Twitter)">
+            <a
+              v-if="tenant?.redes_sociales?.twitter"
+              :href="tenant.redes_sociales.twitter"
+              target="_blank"
+              aria-label="X (Twitter)"
+              title="X (Twitter)"
+            >
               <i class="bi bi-twitter-x"></i>
             </a>
-            <a href="#" aria-label="Instagram" title="Instagram">
+            <a
+              v-if="tenant?.redes_sociales?.instagram"
+              :href="tenant.redes_sociales.instagram"
+              target="_blank"
+              aria-label="Instagram"
+              title="Instagram"
+            >
               <i class="bi bi-instagram"></i>
             </a>
-            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+            <a
+              v-if="tenant?.redes_sociales?.linkedin"
+              :href="tenant.redes_sociales.linkedin"
+              target="_blank"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
               <i class="bi bi-linkedin"></i>
             </a>
           </div>
         </div>
-
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">OTI - UNAP</strong> <span>2025</span></p>
+      <p>
+        © <span>Copyright</span>
+        <strong class="px-1 sitename">OTI - UNAP</strong> <span>2025</span>
+      </p>
       <div class="credits">
         Desarrollado en <a href="#">Subunidad de Gobierno Electrónico</a>
       </div>
     </div>
-
   </footer>
 </template>
 
 <script setup>
+import { useTenant } from "@/composables/useTenant";
+
+const { tenant, menu } = useTenant();
 </script>
 
 <style scoped>
@@ -149,7 +183,8 @@
 
 .copyright {
   padding: 25px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .copyright p {
