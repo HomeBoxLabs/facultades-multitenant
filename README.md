@@ -1,10 +1,10 @@
-# 🎓 Sistema Multi-Tenant para Facultades Universitarias
+#  Sistema Multi-Tenant para Facultades Universitarias
 
 Sistema completo para gestionar múltiples facultades con **Vue.js 3** (frontend) y **Laravel 11** (backend).
 
 ---
 
-## 🚀 Inicio Rápido
+##  Inicio Rápido
 
 ### 1. Backend (Laravel)
 
@@ -21,7 +21,7 @@ php artisan storage:link
 php artisan serve
 ```
 
-✅ Backend en: http://localhost:8000
+ Backend en: http://localhost:8000
 
 ### 2. Frontend (Vue.js)
 
@@ -31,13 +31,13 @@ npm install
 npm run dev
 ```
 
-✅ Frontend en: http://localhost:5173
+ Frontend en: http://localhost:5173
 
 ---
 
-## 📚 Documentación
+##  Documentación
 
-### 📱 [FRONTEND.md](FRONTEND.md)
+###  [FRONTEND.md](FRONTEND.md)
 
 - Estructura del proyecto Vue
 - Componentes y vistas
@@ -45,7 +45,7 @@ npm run dev
 - Cómo cambiar de facultad
 - Tips de desarrollo
 
-### 🔧 [BACKEND.md](BACKEND.md)
+###  [BACKEND.md](BACKEND.md)
 
 - API REST endpoints
 - Modelos y relaciones
@@ -53,7 +53,7 @@ npm run dev
 - Comandos útiles
 - Producción
 
-### 💾 [BASE_DE_DATOS.md](BASE_DE_DATOS.md)
+###  [BASE_DE_DATOS.md](BASE_DE_DATOS.md)
 
 - Estructura de tablas
 - Cómo agregar datos
@@ -63,27 +63,27 @@ npm run dev
 
 ---
 
-## ✨ Características
+##  Características
 
 ### Frontend:
 
-- ✅ Diseño moderno con animaciones
-- ✅ Responsive (móvil, tablet, desktop)
-- ✅ Colores dinámicos por facultad
-- ✅ Font Awesome + Google Fonts
-- ✅ 100% sin datos hardcodeados
+-  Diseño moderno con animaciones
+-  Responsive (móvil, tablet, desktop)
+-  Colores dinámicos por facultad
+-  Font Awesome + Google Fonts
+-  100% sin datos hardcodeados
 
 ### Backend:
 
-- ✅ API RESTful con Laravel 11
-- ✅ Base de datos MySQL
-- ✅ Sistema de archivos (storage)
-- ✅ CORS configurado
-- ✅ Seeders con datos de ejemplo
+-  API RESTful con Laravel 11
+-  Base de datos MySQL
+-  Sistema de archivos (storage)
+-  CORS configurado
+-  Seeders con datos de ejemplo
 
 ---
 
-## 🎨 Demo
+##  Demo
 
 ### Facultad de Ingeniería (Azul)
 
@@ -95,14 +95,14 @@ http://localhost:5173?tenant_id=2
 
 ---
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 Frotend-Tenant/
-├── FRONTEND.md              # 📱 Documentación frontend
-├── BACKEND.md               # 🔧 Documentación backend
-├── BASE_DE_DATOS.md         # 💾 Documentación BD
-├── README.md                # 📖 Este archivo
+├── FRONTEND.md              #  Documentación frontend
+├── BACKEND.md               #  Documentación backend
+├── BASE_DE_DATOS.md         #  Documentación BD
+├── README.md                #  Este archivo
 │
 ├── frontend-mtenant/   # Vue.js 3 + Vite
 │   ├── src/
@@ -128,7 +128,7 @@ Frotend-Tenant/
 
 ---
 
-## 🔑 Conceptos Clave
+##  Conceptos Clave
 
 ### Multi-Tenant
 
@@ -149,7 +149,7 @@ Todo viene de la base de datos. Cero datos fijos en el código.
 
 ---
 
-## 🛠️ Tecnologías
+##  Tecnologías
 
 ### Frontend:
 
@@ -170,7 +170,7 @@ Todo viene de la base de datos. Cero datos fijos en el código.
 
 ---
 
-## 📊 Datos Incluidos
+##  Datos Incluidos
 
 El sistema incluye 2 facultades de ejemplo:
 
@@ -190,7 +190,7 @@ El sistema incluye 2 facultades de ejemplo:
 
 ---
 
-## 🎯 Uso Básico
+##  Uso Básico
 
 ### Ver una facultad:
 
@@ -213,7 +213,7 @@ http://localhost:5173?facultad=economia
 
 ---
 
-## ⚠️ Troubleshooting
+##  Troubleshooting
 
 ### Frontend muestra "Cargando..."
 
@@ -245,7 +245,7 @@ Consulta los archivos de documentación:
 
 ---
 
-## 📝 Próximos Pasos
+##  Próximos Pasos
 
 1. **Agregar más facultades** → Ver [BASE_DE_DATOS.md](BASE_DE_DATOS.md)
 2. **Subir imágenes reales** → Ver [BASE_DE_DATOS.md](BASE_DE_DATOS.md)
@@ -254,7 +254,7 @@ Consulta los archivos de documentación:
 
 ---
 
-## 🎨 Personalización
+##  Personalización
 
 ### Agregar nueva facultad:
 
@@ -267,13 +267,13 @@ Ver detalles en [BASE_DE_DATOS.md](BASE_DE_DATOS.md)
 
 ---
 
-## 📄 Licencia
+##  Licencia
 
 MIT License
 
 ---
 
-## 👨‍💻 Desarrollo
+##  Desarrollo
 
 - **Frontend**: Vue.js 3 + Vite
 - **Backend**: Laravel 11
@@ -284,6 +284,6 @@ MIT License
 
 ---
 
-**Sistema completo, moderno y listo para producción! 🚀**
+**Sistema completo, moderno y listo para producción! **
 
 Para más detalles, consulta la documentación específica de cada componente.

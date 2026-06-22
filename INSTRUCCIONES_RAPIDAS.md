@@ -1,6 +1,6 @@
-# 🚀 GUÍA RÁPIDA - Multi-Tenant
+#  GUÍA RÁPIDA - Multi-Tenant
 
-## ▶️ INICIAR PROYECTO (2 Terminales)
+## ▶ INICIAR PROYECTO (2 Terminales)
 
 ### Terminal 1 - Backend
 
@@ -22,7 +22,7 @@ npm run dev
 
 ---
 
-## 🌐 ACCEDER A LAS FACULTADES
+##  ACCEDER A LAS FACULTADES
 
 ### Facultad de Ingeniería Electrónica (ID: 1)
 
@@ -56,19 +56,19 @@ http://localhost:5173
 
 ---
 
-## 📊 QUÉ VERÁS AL CAMBIAR DE FACULTAD
+##  QUÉ VERÁS AL CAMBIAR DE FACULTAD
 
-- ✅ Colores diferentes (Azul para Ingeniería, Verde para Economía)
-- ✅ Nombre y descripción de la facultad
-- ✅ Programas académicos diferentes
-- ✅ Autoridades diferentes
-- ✅ Documentos diferentes
-- ✅ Datos de contacto en footer diferentes
-- ✅ Redes sociales diferentes
+-  Colores diferentes (Azul para Ingeniería, Verde para Economía)
+-  Nombre y descripción de la facultad
+-  Programas académicos diferentes
+-  Autoridades diferentes
+-  Documentos diferentes
+-  Datos de contacto en footer diferentes
+-  Redes sociales diferentes
 
 ---
 
-## 🔧 COMANDOS ÚTILES
+##  COMANDOS ÚTILES
 
 ### Resetear Base de Datos
 
@@ -94,7 +94,7 @@ php artisan route:list --path=api
 
 ---
 
-## 📝 ESTRUCTURA DE URLs MULTI-TENANT
+##  ESTRUCTURA DE URLs MULTI-TENANT
 
 | Método         | URL                                | Descripción            |
 | -------------- | ---------------------------------- | ---------------------- |
@@ -105,7 +105,7 @@ php artisan route:list --path=api
 
 ---
 
-## ✅ CHECKLIST ANTES DE PROBAR
+##  CHECKLIST ANTES DE PROBAR
 
 - [ ] Backend corriendo en puerto 8000
 - [ ] Frontend corriendo en puerto 5173
@@ -114,7 +114,7 @@ php artisan route:list --path=api
 
 ---
 
-## 🎯 EJEMPLO DE PRUEBA RÁPIDA
+##  EJEMPLO DE PRUEBA RÁPIDA
 
 1. **Abrir 2 terminales**
 2. **Terminal 1:** `cd backend-mtenant && php artisan serve`
@@ -159,4 +159,4 @@ Cmd + Shift + R (Mac)
 
 ---
 
-¡Listo para trabajar! 🎉
+¡Listo para trabajar! 

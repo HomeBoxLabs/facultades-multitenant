@@ -1,12 +1,12 @@
-# 💾 Base de Datos - Sistema Multi-Tenant
+#  Base de Datos - Sistema Multi-Tenant
 
-## 🎯 Resumen
+##  Resumen
 
 Base de datos MySQL para gestionar múltiples facultades con sus programas, autoridades y documentos.
 
 ---
 
-## ⚡ Inicio Rápido
+##  Inicio Rápido
 
 ### 1. Crear Base de Datos
 ```sql
@@ -31,7 +31,7 @@ php artisan db:seed
 
 ---
 
-## 📊 Estructura de Tablas
+##  Estructura de Tablas
 
 ### tenants (Facultades)
 ```sql
@@ -111,7 +111,7 @@ FOREIGN KEY (tenant_id) REFERENCES tenants(id) ON DELETE CASCADE
 
 ---
 
-## 📥 Agregar Datos
+##  Agregar Datos
 
 ### Opción 1: Por SQL
 
@@ -219,7 +219,7 @@ $medicina->autoridades()->create([
 
 ---
 
-## 🖼️ Agregar Imágenes
+##  Agregar Imágenes
 
 ### Paso 1: Subir Archivos
 
@@ -276,7 +276,7 @@ Abrir en navegador:
 
 ---
 
-## 📄 Agregar Documentos (PDFs)
+##  Agregar Documentos (PDFs)
 
 ### 1. Subir PDF:
 ```bash
@@ -311,7 +311,7 @@ INSERT INTO documentos (
 
 ---
 
-## 🔄 Actualizar Datos
+##  Actualizar Datos
 
 ### Actualizar Facultad:
 ```sql
@@ -341,7 +341,7 @@ WHERE id = 1;
 
 ---
 
-## 🗑️ Eliminar Datos
+##  Eliminar Datos
 
 ### Eliminar Facultad (elimina todo relacionado):
 ```sql
@@ -357,7 +357,7 @@ DELETE FROM programas WHERE id = 5;
 
 ---
 
-## 🔍 Consultas Útiles
+##  Consultas Útiles
 
 ### Ver todas las facultades:
 ```sql
@@ -400,7 +400,7 @@ GROUP BY t.id, t.nombre;
 
 ---
 
-## 🎨 Colores Recomendados
+##  Colores Recomendados
 
 ### Facultades comunes:
 ```
@@ -414,7 +414,7 @@ Educación:   #ec4899 (Rosa)
 
 ---
 
-## 📊 Formatos de Archivos
+##  Formatos de Archivos
 
 ### Imágenes:
 
@@ -441,7 +441,7 @@ Educación:   #ec4899 (Rosa)
 
 ---
 
-## 🔧 Mantenimiento
+##  Mantenimiento
 
 ### Backup de Base de Datos:
 ```bash
@@ -468,24 +468,24 @@ TRUNCATE TABLE tenants;
 
 ---
 
-## ⚠️ Importante
+##  Importante
 
 ### Rutas de Archivos:
 - **En BD**: Solo ruta relativa → `logos/medicina.png`
-- **No usar**: `/storage/logos/medicina.png` ❌
-- **No usar**: URL completa ❌
+- **No usar**: `/storage/logos/medicina.png` 
+- **No usar**: URL completa 
 
 El modelo genera la URL completa automáticamente.
 
 ### Cascade Delete:
 Al eliminar una facultad, se eliminan automáticamente:
-- ✅ Todos sus programas
-- ✅ Todas sus autoridades
-- ✅ Todos sus documentos
+-  Todos sus programas
+-  Todas sus autoridades
+-  Todos sus documentos
 
 ---
 
-## 📋 Checklist de Datos Mínimos
+##  Checklist de Datos Mínimos
 
 Para cada facultad nueva:
 
@@ -500,4 +500,4 @@ Para cada facultad nueva:
 
 ---
 
-**¡Base de datos bien estructurada y fácil de gestionar! 💾**
+**¡Base de datos bien estructurada y fácil de gestionar! **

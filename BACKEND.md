@@ -1,12 +1,12 @@
-# 🔧 Backend - Sistema Multi-Tenant
+#  Backend - Sistema Multi-Tenant
 
-## 🎯 Resumen
+##  Resumen
 
 API RESTful desarrollada con **Laravel 11 + MySQL** para gestionar múltiples facultades universitarias.
 
 ---
 
-## ⚡ Inicio Rápido
+##  Inicio Rápido
 
 ```bash
 cd backend-mtenant
@@ -23,7 +23,7 @@ API disponible en: http://localhost:8000
 
 ---
 
-## 📁 Estructura
+##  Estructura
 
 ```
 backend-mtenant/
@@ -54,7 +54,7 @@ backend-mtenant/
 
 ---
 
-## 🔌 API Endpoints
+##  API Endpoints
 
 ### Base URL
 
@@ -95,7 +95,7 @@ http://localhost:8000/api
 
 ---
 
-## 🗄️ Modelos
+##  Modelos
 
 ### Tenant
 
@@ -132,7 +132,7 @@ $documento->archivo_url // URL completa
 
 ---
 
-## ⚙️ Configuración
+##  Configuración
 
 ### .env (MySQL)
 
@@ -158,7 +158,7 @@ APP_URL=http://localhost:8000
 
 ---
 
-## 📦 Migraciones
+##  Migraciones
 
 ### Ejecutar:
 
@@ -177,7 +177,7 @@ php artisan migrate:fresh --seed  # + datos
 
 ---
 
-## 🌱 Seeders
+##  Seeders
 
 ### Ejecutar:
 
@@ -195,7 +195,7 @@ php artisan db:seed --class=TenantSeeder # Solo tenants
 
 ---
 
-## 📂 Storage (Archivos)
+##  Storage (Archivos)
 
 ### Crear enlace simbólico:
 
@@ -231,7 +231,7 @@ Resultado: `http://localhost:8000/storage/logos/ingenieria.png`
 
 ---
 
-## 🔧 Comandos Útiles
+##  Comandos Útiles
 
 ```bash
 # Cache
@@ -251,7 +251,7 @@ tail -f storage/logs/laravel.log
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ### Probar API:
 
@@ -274,7 +274,7 @@ curl http://localhost:8000/api/tenant/all
 
 ---
 
-## 💡 Tips de Desarrollo
+##  Tips de Desarrollo
 
 ### Crear nuevo modelo:
 
@@ -301,7 +301,7 @@ $tenant->save();
 
 ---
 
-## 🚀 Producción
+##  Producción
 
 ### 1. Configurar .env:
 
@@ -329,7 +329,7 @@ chown -R www-data:www-data storage bootstrap/cache
 
 ---
 
-## ⚠️ Troubleshooting
+##  Troubleshooting
 
 ### Error: Connection refused
 
@@ -357,7 +357,7 @@ php artisan storage:link
 
 ---
 
-## 📊 Estadísticas
+##  Estadísticas
 
 - **4 modelos** principales
 - **4 migraciones** de BD
@@ -367,4 +367,4 @@ php artisan storage:link
 
 ---
 
-**¡Backend robusto y escalable! 🚀**
+**¡Backend robusto y escalable! **

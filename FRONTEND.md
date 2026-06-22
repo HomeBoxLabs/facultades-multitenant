@@ -1,12 +1,12 @@
-# 📱 Frontend - Sistema Multi-Tenant
+#  Frontend - Sistema Multi-Tenant
 
-## 🎯 Resumen
+##  Resumen
 
 Frontend moderno desarrollado con **Vue.js 3 + Vite** para sistema multi-tenant de facultades universitarias.
 
 ---
 
-## ⚡ Inicio Rápido
+##  Inicio Rápido
 
 ```bash
 cd frontend-mtenant
@@ -18,9 +18,9 @@ Abre: http://localhost:5173
 
 ---
 
-## 🎨 Características
+##  Características
 
-### ✅ Diseño Moderno
+###  Diseño Moderno
 
 - Fuente profesional "Inter" (Google Fonts)
 - Iconos Font Awesome 6.5.1
@@ -28,13 +28,13 @@ Abre: http://localhost:5173
 - Gradientes dinámicos
 - Sombras modernas
 
-### ✅ Responsive
+###  Responsive
 
 - Mobile: < 480px
 - Tablet: 480px - 768px
 - Desktop: > 768px
 
-### ✅ Colores Dinámicos
+###  Colores Dinámicos
 
 Los colores cambian automáticamente según la facultad:
 
@@ -43,7 +43,7 @@ Los colores cambian automáticamente según la facultad:
 
 ---
 
-## 📁 Estructura
+##  Estructura
 
 ```
 frontend-mtenant/
@@ -71,7 +71,7 @@ frontend-mtenant/
 
 ---
 
-## 🔧 Configuración
+##  Configuración
 
 ### Variables de Entorno (.env)
 
@@ -81,7 +81,7 @@ VITE_API_URL=http://localhost:8000/api
 
 ---
 
-## 🎨 Componentes
+##  Componentes
 
 ### Header
 
@@ -106,7 +106,7 @@ VITE_API_URL=http://localhost:8000/api
 
 ---
 
-## 🌐 Rutas
+##  Rutas
 
 | Ruta           | Componente      | Descripción              |
 | -------------- | --------------- | ------------------------ |
@@ -118,7 +118,7 @@ VITE_API_URL=http://localhost:8000/api
 
 ---
 
-## 🔄 Cambiar de Facultad
+##  Cambiar de Facultad
 
 ### Por URL:
 
@@ -139,7 +139,7 @@ await tenantStore.fetchTenant(2); // Cambiar a facultad ID 2
 
 ---
 
-## 🎨 Sistema de Colores
+##  Sistema de Colores
 
 ### Variables CSS Dinámicas:
 
@@ -161,7 +161,7 @@ Los colores se actualizan automáticamente cuando cambia el tenant.
 
 ---
 
-## 💫 Animaciones
+##  Animaciones
 
 ### Disponibles:
 
@@ -182,7 +182,7 @@ Los colores se actualizan automáticamente cuando cambia el tenant.
 
 ---
 
-## 📱 Responsive
+##  Responsive
 
 ### Breakpoints:
 
@@ -202,7 +202,7 @@ Los colores se actualizan automáticamente cuando cambia el tenant.
 
 ---
 
-## 🚀 Build para Producción
+##  Build para Producción
 
 ```bash
 npm run build      # Crear build
@@ -213,7 +213,7 @@ Build se genera en carpeta `dist/`
 
 ---
 
-## 🔍 Comandos Útiles
+##  Comandos Útiles
 
 ```bash
 npm run dev        # Desarrollo
@@ -224,7 +224,7 @@ npm install        # Instalar deps
 
 ---
 
-## 💡 Tips
+##  Tips
 
 ### Agregar nueva página:
 
@@ -255,7 +255,7 @@ const logo = computed(() => tenantStore.tenantLogo);
 
 ---
 
-## ⚠️ Troubleshooting
+##  Troubleshooting
 
 ### Página muestra "Cargando..." indefinidamente
 
@@ -276,7 +276,7 @@ const logo = computed(() => tenantStore.tenantLogo);
 
 ---
 
-## 📊 Estadísticas
+##  Estadísticas
 
 - **~1,540 líneas** de CSS moderno
 - **11 animaciones** creadas
@@ -287,4 +287,4 @@ const logo = computed(() => tenantStore.tenantLogo);
 
 ---
 
-**¡Frontend moderno y profesional! ✨**
+**¡Frontend moderno y profesional! **

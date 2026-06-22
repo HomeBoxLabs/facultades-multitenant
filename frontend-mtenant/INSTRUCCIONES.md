@@ -1,18 +1,18 @@
 # INSTRUCCIONES DE INSTALACIÓN - Frontend OTI
 
-## ✅ Proyecto Completado
+##  Proyecto Completado
 
 Se ha migrado exitosamente el proyecto de **JavaScript Vanilla** a **Vue.js 3 + Vite** manteniendo:
 
-- ✅ Todos los estilos (Bootstrap + CSS custom)
-- ✅ Todas las funcionalidades
-- ✅ Diseño responsive
-- ✅ Animaciones y efectos
-- ✅ Modales y videos de YouTube
+-  Todos los estilos (Bootstrap + CSS custom)
+-  Todas las funcionalidades
+-  Diseño responsive
+-  Animaciones y efectos
+-  Modales y videos de YouTube
 
 ---
 
-## 📦 PASO 1: Instalar Dependencias
+##  PASO 1: Instalar Dependencias
 
 Abre una terminal en la carpeta del proyecto y ejecuta:
 
@@ -33,7 +33,7 @@ Esto instalará:
 
 ---
 
-## 🎯 PASO 2: Ejecutar el Proyecto
+##  PASO 2: Ejecutar el Proyecto
 
 ### Modo Desarrollo (con Hot Reload)
 
@@ -53,7 +53,7 @@ Los archivos optimizados se crearán en la carpeta `dist/`
 
 ---
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 frontend-oti/
@@ -77,7 +77,7 @@ frontend-oti/
 │   │   │   └── ScrollToTop.vue     # Botón scroll
 │   │   │
 │   │   ├── sections/
-│   │   │   ├── HeroSection.vue     # Sección principal ⭐
+│   │   │   ├── HeroSection.vue     # Sección principal 
 │   │   │   ├── NoticiasSection.vue # Actividades OTI
 │   │   │   ├── ServiciosSection.vue# Servicios estudiantes
 │   │   │   └── TeamSection.vue     # Plana directiva
@@ -101,7 +101,7 @@ frontend-oti/
 
 ---
 
-## 🎨 Componentes Principales
+##  Componentes Principales
 
 ### 1. **HeroSection.vue** (La más importante)
 
@@ -139,7 +139,7 @@ frontend-oti/
 
 ---
 
-## 🔧 Tecnologías Usadas
+##  Tecnologías Usadas
 
 | Tecnología      | Versión | Uso                 |
 | --------------- | ------- | ------------------- |
@@ -154,43 +154,43 @@ frontend-oti/
 
 ---
 
-## 🌐 Funcionalidades Implementadas
+##  Funcionalidades Implementadas
 
-✅ **Navegación Responsive**
+ **Navegación Responsive**
 
 - Menú hamburguesa en móvil
 - Mega-menu dropdown en desktop
 
-✅ **Video Modals**
+ **Video Modals**
 
 - Modal para videos de YouTube
 - 4 videos disponibles (OTI, FirmaUNA, Linux, Mac)
 - Cierre con overlay o botón X
 
-✅ **FirmaUNA Modal**
+ **FirmaUNA Modal**
 
 - Se abre automáticamente al cargar la página
 - Descarga para Windows, Linux, MacOS
 - Links a tutoriales en video
 
-✅ **Animaciones AOS**
+ **Animaciones AOS**
 
 - Efectos fade-up, zoom-in
 - Se activan al hacer scroll
 
-✅ **Scroll to Top**
+ **Scroll to Top**
 
 - Botón que aparece después de 100px de scroll
 - Animación smooth
 
-✅ **Responsive Images**
+ **Responsive Images**
 
 - Imágenes optimizadas
 - Lazy loading
 
 ---
 
-## 🐛 Resolución de Problemas
+##  Resolución de Problemas
 
 ### Error: "Cannot find module '@/components/...'"
 
@@ -210,7 +210,7 @@ frontend-oti/
 
 ---
 
-## 📝 Modificar el Proyecto
+##  Modificar el Proyecto
 
 ### Cambiar colores
 
@@ -228,7 +228,7 @@ Edita `src/components/layout/AppHeader.vue`
 
 ---
 
-## 🚀 Despliegue en Producción
+##  Despliegue en Producción
 
 ### 1. Build
 
@@ -255,7 +255,7 @@ server {
 
 ---
 
-## 📞 Soporte
+##  Soporte
 
 **Desarrollado por:**
 Subunidad de Gobierno Electrónico - OTI UNAP
@@ -264,6 +264,6 @@ Subunidad de Gobierno Electrónico - OTI UNAP
 
 ---
 
-## ✨ ¡Listo para usar!
+##  ¡Listo para usar!
 
-Ejecuta `npm run dev` y disfruta de tu nueva aplicación Vue.js 🎉
+Ejecuta `npm run dev` y disfruta de tu nueva aplicación Vue.js 
